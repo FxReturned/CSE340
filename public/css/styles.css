@@ -1,8 +1,3 @@
-/* =========================
-   Base (Mobile-First) Styles
-   ========================= */
-
-/* CSS Variables for Gray Palette */
 :root {
   --gray-100: #f2f2f2;
   --gray-200: #e0e0e0;
@@ -36,9 +31,7 @@ body {
   line-height: 1.5;
 }
 
-/* =========================
-   HEADER
-   ========================= */
+/* HEADER */
 .site-header {
   display: flex;                
   justify-content: space-between;
@@ -69,9 +62,7 @@ body {
   font-size: 1.2rem;
 }
 
-/* =========================
-   NAVIGATION
-   ========================= */
+/* NAVIGATION */
 .site-nav {
   background-color: var(--gray-300);
   padding: 0.5rem 0;
@@ -109,9 +100,7 @@ body {
   text-decoration: none;
 }
 
-/* =========================
-   HERO SECTION
-   ========================= */
+/* HERO SECTION */
 .hero {
   text-align: center;         
   margin-bottom: 2rem;        
@@ -130,9 +119,7 @@ body {
   color: var(--gray-600);
 }
 
-/* =========================
-   CAR DETAILS
-   ========================= */
+/* CAR DETAILS */
 .car-details {
   display: flex;
   flex-wrap: wrap;
@@ -143,7 +130,6 @@ body {
   padding-bottom: 3rem;
 }
 
-/* Fondo degradado vertical para .car-info */
 .car-info {
   background: linear-gradient(to bottom, #ffffff 0%, #dcdcdc 100%);
   padding: 1.5rem;
@@ -177,36 +163,30 @@ body {
 }
 
 .car-image img {
-  max-width: 400px; /* Imagen más grande */
+  max-width: 400px; 
   height: auto;
   display: block;
 }
 
-/* =========================
-   REVIEWS & UPGRADES
-   ========================= */
-/* Contenedor principal para Reviews y Upgrades */
+/* REVIEWS & UPGRADES */
 .reviews-upgrades {
   display: flex;           
-  align-items: flex-start; /* Alinea ambas secciones arriba */
-  justify-content: center; /* Centra horizontalmente si quieres */
+  align-items: flex-start; 
+  justify-content: center; 
   gap: 2rem;
   margin-bottom: 2rem;
 }
 
-/* Cada sección se reparte el espacio,
-   y tienen un ancho máximo para lucir proporcionadas */
 .reviews-section,
 .upgrades-section {
   flex: 1;
   max-width: 500px;
-  background-color: #fff;        /* Fondo blanco */
+  background-color: #fff;      
   border-radius: 8px;
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Títulos de cada sección */
 .reviews-section h2,
 .upgrades-section h2 {
   margin-top: 0;
@@ -214,14 +194,12 @@ body {
   color: var(--gray-800);
 }
 
-/* Listas de reviews */
 .reviews-section ul {
   margin: 0;
   padding-left: 1.2rem;
   color: var(--gray-700);
 }
 
-/* Grid 2x2 para Upgrades */
 .upgrade-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -229,7 +207,6 @@ body {
   margin-top: 1rem;
 }
 
-/* Cada tarjeta de upgrade */
 .upgrade-item {
   background-color: #f9f9f9; 
   border: 1px solid #ddd;
@@ -256,9 +233,7 @@ body {
   color: var(--gray-800);
 }
 
-/* =========================
-   BUTTON STYLES
-   ========================= */
+/* BUTTON STYLES */
 .btn {
   background-color: var(--gray-600);
   color: var(--gray-100);
@@ -274,9 +249,7 @@ body {
   background-color: var(--gray-700);
 }
 
-/* =========================
-   FOOTER
-   ========================= */
+/* FOOTER */
 .site-footer {
   background-color: var(--gray-200);
   padding: 1rem 2rem;
@@ -285,10 +258,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* =========================
-   RESPONSIVE STYLES
-   ========================= */
-/* Desktop up */
+/* RESPONSIVE STYLES */
 @media (min-width: 768px) {
   main {
     width: 90%;
@@ -300,37 +270,31 @@ body {
   }
 }
 
-
-/* Mobile down */
 @media (max-width: 768px) {
-  /* Car details en columna */
   .car-details {
     flex-direction: column;
   }
 
   .site-nav ul {
-    flex-direction: column; /* Pasa los enlaces a una sola columna */
-    gap: 1rem;             /* Espacio vertical entre enlaces */
+    flex-direction: column; 
+    gap: 1rem;             
   }
   .site-nav a {
-    width: 100%;          /* El enlace ocupa todo el ancho */
-    text-align: center;   /* Centra el texto */
+    width: 100%;         
+    text-align: center;   
   }
 
-  /* Reviews & Upgrades en columna */
   .reviews-upgrades {
     flex-direction: column;
-    align-items: center;  /* Centra cada tarjeta verticalmente */
+    align-items: center;  
   }
 
-  /* Ajusta el ancho máximo para mobile */
   .reviews-section,
   .upgrades-section {
     max-width: 600px;
     margin-bottom: 1rem;
   }
 
-  /* Upgrades en 1 columna en mobile */
   .upgrade-grid {
     grid-template-columns: 1fr;
   }
