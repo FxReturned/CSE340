@@ -1,6 +1,337 @@
-/******* Change Box Model ***************/
-*,
-*:before,
-*:after {
+/* =========================
+   Base (Mobile-First) Styles
+   ========================= */
+
+/* CSS Variables for Gray Palette */
+:root {
+  --gray-100: #f2f2f2;
+  --gray-200: #e0e0e0;
+  --gray-300: #cccccc;
+  --gray-400: #b3b3b3;
+  --gray-500: #808080;
+  --gray-600: #666666;
+  --gray-700: #4d4d4d;
+  --gray-800: #333333;
+  --gray-900: #1a1a1a;
+
+  --primary-color: var(--gray-800);
+  --secondary-color: var(--gray-100);
+  --accent-color: var(--gray-400);
+}
+
+/* Global Styles */
+* {
   box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+.site-header {
+  display: flex;                
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--gray-200);   
+  padding: 1rem 2rem;
+}
+
+.brand {
+  display: flex;             
+  align-items: center;
+}
+
+.brand img {
+  max-height: 50px;            
+  margin-right: 0.5rem;         
+}
+
+.brand h1 {
+  font-size: 1.5rem;            
+  margin: 0;
+  color: #333;                
+}
+
+.header-tagline {
+  font-weight: bold;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+.site-nav {
+  background-color: var(--gray-300);
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 2rem;
+  max-width: 1200px;
+}
+
+.site-nav li {
+  margin: 0;
+}
+
+.site-nav a {
+  color: var(--gray-800);
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap; 
+}
+
+.site-nav a:hover {
+  background-color: var(--gray-400);
+  color: var(--gray-100);
+  text-decoration: none;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+.hero {
+  text-align: center;         
+  margin-bottom: 2rem;        
+}
+
+.hero h1 {
+  font-size: 2.5rem;     
+  margin-bottom: 0.5rem;
+  color: var(--gray-800); 
+}
+
+.hero p {
+  font-size: 1.2rem;     
+  margin: 0 auto 1.5rem auto; 
+  max-width: 600px;      
+  color: var(--gray-600);
+}
+
+/* =========================
+   CAR DETAILS
+   ========================= */
+.car-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+
+/* Fondo degradado vertical para .car-info */
+.car-info {
+  background: linear-gradient(to bottom, #ffffff 0%, #dcdcdc 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 350px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.car-info h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--gray-800);
+}
+
+.car-info ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--gray-700);
+}
+
+.car-info .btn {
+  margin-top: 1rem;
+}
+
+.car-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.car-image img {
+  max-width: 400px; /* Imagen más grande */
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   REVIEWS & UPGRADES
+   ========================= */
+/* Contenedor principal para Reviews y Upgrades */
+.reviews-upgrades {
+  display: flex;           
+  align-items: flex-start; /* Alinea ambas secciones arriba */
+  justify-content: center; /* Centra horizontalmente si quieres */
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Cada sección se reparte el espacio,
+   y tienen un ancho máximo para lucir proporcionadas */
+.reviews-section,
+.upgrades-section {
+  flex: 1;
+  max-width: 500px;
+  background-color: #fff;        /* Fondo blanco */
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Títulos de cada sección */
+.reviews-section h2,
+.upgrades-section h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: var(--gray-800);
+}
+
+/* Listas de reviews */
+.reviews-section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--gray-700);
+}
+
+/* Grid 2x2 para Upgrades */
+.upgrade-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Cada tarjeta de upgrade */
+.upgrade-item {
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.upgrade-item:hover {
+  transform: translateY(-2px);
+}
+
+.upgrade-item img {
+  max-width: 80px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.upgrade-item p {
+  margin: 0;
+  font-weight: 500;
+  color: var(--gray-800);
+}
+
+/* =========================
+   BUTTON STYLES
+   ========================= */
+.btn {
+  background-color: var(--gray-600);
+  color: var(--gray-100);
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--gray-700);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.site-footer {
+  background-color: var(--gray-200);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-top: 2px solid var(--gray-400);
+  font-size: 0.9rem;
+}
+
+/* =========================
+   RESPONSIVE STYLES
+   ========================= */
+/* Desktop up */
+@media (min-width: 768px) {
+  main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .upgrade-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* Mobile down */
+@media (max-width: 768px) {
+  /* Car details en columna */
+  .car-details {
+    flex-direction: column;
+  }
+
+  .site-nav ul {
+    flex-direction: column; /* Pasa los enlaces a una sola columna */
+    gap: 1rem;             /* Espacio vertical entre enlaces */
+  }
+  .site-nav a {
+    width: 100%;          /* El enlace ocupa todo el ancho */
+    text-align: center;   /* Centra el texto */
+  }
+
+  /* Reviews & Upgrades en columna */
+  .reviews-upgrades {
+    flex-direction: column;
+    align-items: center;  /* Centra cada tarjeta verticalmente */
+  }
+
+  /* Ajusta el ancho máximo para mobile */
+  .reviews-section,
+  .upgrades-section {
+    max-width: 600px;
+    margin-bottom: 1rem;
+  }
+
+  /* Upgrades en 1 columna en mobile */
+  .upgrade-grid {
+    grid-template-columns: 1fr;
+  }
 }
